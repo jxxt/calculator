@@ -215,7 +215,7 @@ multiplyKey.addEventListener("click", () => {
         bottomDisplay.innerHTML = "0"
     }
     else {
-        topDisplay.innerHTML = solution + " ÷ "
+        topDisplay.innerHTML = solution + " x "
         lhs = solution
         bottomDisplay.innerHTML = "0"
     }
@@ -235,7 +235,7 @@ subtractKey.addEventListener("click", () => {
         bottomDisplay.innerHTML = "0"
     }
     else {
-        topDisplay.innerHTML = solution + " ÷ "
+        topDisplay.innerHTML = solution + " - "
         lhs = solution
         bottomDisplay.innerHTML = "0"
     }
@@ -255,7 +255,7 @@ addKey.addEventListener("click", () => {
         bottomDisplay.innerHTML = "0"
     }
     else {
-        topDisplay.innerHTML = solution + " ÷ "
+        topDisplay.innerHTML = solution + " + "
         lhs = solution
         bottomDisplay.innerHTML = "0"
     }
