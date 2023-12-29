@@ -16,7 +16,7 @@ body {
 .container {
     background-color: beige;
     height: 70vh;
-    width: 23%;
+    width: 350px;
     border: 6px rgb(160, 132, 95) solid;
     border-radius: 50px;
     display: flex;
