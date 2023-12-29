@@ -34,6 +34,37 @@ body {
     height: calc(2/7*100%);
     border: 2px grey solid;
     border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.container .display .top {
+    height: 40%;
+}
+
+.container .display .bottom {
+    height: 60%;
+}
+
+/* .display > div {
+    background-color: #4bab4e;
+} */
+
+.top {
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 30px;
+}
+
+.bottom {
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 50px;
 }
 
 .buttons {
@@ -57,8 +88,6 @@ body {
     flex-direction: row;
     gap: 20px;
 }
-
-.row1 {}
 
 .buttons>div>div {
     background-color: rgb(120, 120, 211);
