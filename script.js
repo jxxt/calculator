@@ -23,11 +23,26 @@ const multiplyKey = document.querySelector(".multiply")
 const subtractKey = document.querySelector(".subtract")
 const addKey = document.querySelector(".add")
 
+const equalKey = document.querySelector(".equal")
+
+let signCounter = 0
+
 let lhs
 let rhs
 
+let solution
+
+let divideCounter
+let multiplyCounter
+let subtractCounter
+let addCounter
+
 clearKey.addEventListener('click', () => {
     bottomDisplay.innerHTML = 0
+    topDisplay.innerHTML = ""
+    signCounter = 0
+    lhs = 0
+    rhs = 0
 })
 
 deleteKey.addEventListener('click', () => {
@@ -38,8 +53,12 @@ deleteKey.addEventListener('click', () => {
         // console.log(lengthOfDisplay)
         // console.log(str[lengthOfDisplay-1])
         bottomDisplay.innerHTML = ""
-        for (let i = 0; i < lengthOfDisplay - 1; i++) {
+        let i
+        for (i = 0; i < lengthOfDisplay - 1; i++) {
             bottomDisplay.innerHTML += str[i]
+        }
+        if (i == 0) {
+            bottomDisplay.innerHTML = 0
         }
     }
 })
@@ -162,10 +181,103 @@ dotKey.addEventListener('click', () => {
     }
 })
 
-// divideKey.addEventListener("click", () => {
-//     let intergerValue = parseFloat(bottomDisplay.innerHTML)
-//     // console.log(intergerValue)
-//     lhs = intergerValue
-//     topDisplay.innerHTML += lhs + " ÷ "
-//     bottomDisplay.innerHTML = "0"
-// }) 
+divideKey.addEventListener("click", () => {
+    signCounter++
+    divideCounter = 1
+    multiplyCounter = 0
+    subtractCounter = 0
+    addCounter = 0
+    if (signCounter == 1) {
+        let intergerValue = parseFloat(bottomDisplay.innerHTML)
+        console.log(intergerValue)
+        lhs = intergerValue
+        topDisplay.innerHTML += bottomDisplay.innerHTML + " ÷ "
+        bottomDisplay.innerHTML = "0"
+    }
+    else {
+        topDisplay.innerHTML = solution + " ÷ "
+        lhs = solution
+        bottomDisplay.innerHTML = "0"
+    }
+})
+
+multiplyKey.addEventListener("click", () => {
+    signCounter++
+    divideCounter = 0
+    multiplyCounter = 1
+    subtractCounter = 0
+    addCounter = 0
+    if (signCounter == 1) {
+        let intergerValue = parseFloat(bottomDisplay.innerHTML)
+        console.log(intergerValue)
+        lhs = intergerValue
+        topDisplay.innerHTML += bottomDisplay.innerHTML + " x "
+        bottomDisplay.innerHTML = "0"
+    }
+    else {
+        topDisplay.innerHTML = solution + " ÷ "
+        lhs = solution
+        bottomDisplay.innerHTML = "0"
+    }
+})
+
+subtractKey.addEventListener("click", () => {
+    signCounter++
+    divideCounter = 0
+    multiplyCounter = 0
+    subtractCounter = 1
+    addCounter = 0
+    if (signCounter == 1) {
+        let intergerValue = parseFloat(bottomDisplay.innerHTML)
+        console.log(intergerValue)
+        lhs = intergerValue
+        topDisplay.innerHTML += bottomDisplay.innerHTML + " - "
+        bottomDisplay.innerHTML = "0"
+    }
+    else {
+        topDisplay.innerHTML = solution + " ÷ "
+        lhs = solution
+        bottomDisplay.innerHTML = "0"
+    }
+})
+
+addKey.addEventListener("click", () => {
+    signCounter++
+    divideCounter = 0
+    multiplyCounter = 0
+    subtractCounter = 0
+    addCounter = 1
+    if (signCounter == 1) {
+        let intergerValue = parseFloat(bottomDisplay.innerHTML)
+        console.log(intergerValue)
+        lhs = intergerValue
+        topDisplay.innerHTML += bottomDisplay.innerHTML + " - "
+        bottomDisplay.innerHTML = "0"
+    }
+    else {
+        topDisplay.innerHTML = solution + " ÷ "
+        lhs = solution
+        bottomDisplay.innerHTML = "0"
+    }
+})
+
+equalKey.addEventListener("click", () => {
+    intergerValue = parseFloat(bottomDisplay.innerHTML)
+    console.log(intergerValue)
+    rhs = intergerValue
+    console.log(divideCounter)
+    if (divideCounter) {
+        solution = lhs / rhs
+    }
+    else if (multiplyCounter) {
+        solution = lhs * rhs
+    }
+    else if (subtractCounter) {
+        solution = lhs - rhs
+    }
+    else if (addCounter) {
+        solution = lhs + rhs
+    }
+    topDisplay.innerHTML += bottomDisplay.innerHTML
+    bottomDisplay.innerHTML = solution
+})
