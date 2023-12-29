@@ -32,6 +32,7 @@ body {
     margin-top: 20px;
     width: calc(100% - 40px);
     height: calc(2/7*100%);
+    border: 2px grey solid;
     border-radius: 30px;
 }
 
@@ -61,7 +62,24 @@ body {
 }
 
 .buttons > div > div {
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(120, 120, 211);
     flex: 1;
+    border: 2px grey solid;
     border-radius: 30px;
+    /* text-align: center; */
+    /* line-height: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 25px;
+    color: rgb(84, 84, 84);
+}
+
+.buttons .row1 .delete {
+    background-color: rgb(214, 214, 82);
+}
+
+.buttons .row1 .clear {
+    background-color: rgb(222, 76, 76);
 }
