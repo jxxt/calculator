@@ -251,7 +251,7 @@ addKey.addEventListener("click", () => {
         let intergerValue = parseFloat(bottomDisplay.innerHTML)
         console.log(intergerValue)
         lhs = intergerValue
-        topDisplay.innerHTML += bottomDisplay.innerHTML + " - "
+        topDisplay.innerHTML += bottomDisplay.innerHTML + " + "
         bottomDisplay.innerHTML = "0"
     }
     else {
